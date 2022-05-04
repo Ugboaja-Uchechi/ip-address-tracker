@@ -3,7 +3,7 @@ const apiUrl = "https://geo.ipify.org/api/v2/country,city?apiKey=at_m3M1l8QpxvtG
 
 // The first value in the Array is the latitude, the second value is the longitutude and after that we have the zoom level.
 let map = L.map('map').setView([51.50853, -0.12574], 13);
-const leafletMarker = L.marker([result.location.lat, result.location.lng]).addTo(map);
+const leafletMarker = L.marker([0,0]).addTo(map);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -19,6 +19,7 @@ async function fetchIpAddress() {
   const result = await response.json();
   const { ip } = result
   // L.marker([result.location.lat, result.location.lng]).addTo(map);
+  leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'}).bindPopup('Current location of IP address');
   document.querySelector('#ip').textContent = ip;
   console.log(result)
 
