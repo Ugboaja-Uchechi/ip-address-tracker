@@ -4,7 +4,7 @@ This is my solution to the [IP Address Tracker challenge on Frontend Mentor](htt
 
 ### The challenge
 
-TIn this challenge, I used two separate APIs together to create an IP Address Tracking app.
+In this challenge, I used two separate APIs together to create an IP Address Tracking app.
 
 ### Users should be able to:
 
@@ -23,10 +23,13 @@ TIn this challenge, I used two separate APIs together to create an IP Address Tr
 
 ### Live Link
 
-[Demo Link]()
+[Demo Link](https://ip-address-tracker1.netlify.app/)
 
 ### ScreenShot
 
+Desktop | Mobile
+------------- | -------------
+![image](https://user-images.githubusercontent.com/74814780/166976493-8238d903-c761-4548-8a72-f76ad7d05825.png) | ![image](https://user-images.githubusercontent.com/74814780/166976466-59e1353d-9f0d-40ff-bfae-1b265fa2aab8.png)
 
 ## Author
 Ugboaja Uchechi
