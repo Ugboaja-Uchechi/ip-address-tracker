@@ -1,5 +1,6 @@
 const apiUrl = "https://geo.ipify.org/api/v2/country,city?apiKey=at_EYvak5yT6eY9Gz5EFqX6WwYv7a3Dv";
 const input = document.querySelector('#ip-address');
+const button = document.querySelector('.fa-solid');
 // Leaflet
 // Making a marker with a custom icon
 
@@ -51,7 +52,7 @@ const postIpAddress = () => {
     const response = await get.json()
     return response
   }
-  input.addEventListener('change', async (e) => {
+  button.addEventListener('click', async (e) => {
     e.preventDefault()
     const IPvalue = input.value;
     const { ip,  location: { city, country, postalCode, timezone, lat, lng }, isp } = await data(IPvalue)

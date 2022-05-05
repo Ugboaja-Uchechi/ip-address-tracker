@@ -12,6 +12,7 @@
   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
   crossorigin=""></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <!-- <main class="list">
@@ -26,7 +27,10 @@
       <label for="ip-address">
         <h1>iP address tracker</h1>
       </label>
-      <input type="text" name="ip-address" id="ip-address" placeholder="Search for any IP address or domain">
+      <div class="input-container">
+        <input type="text" name="ip-address" id="ip-address" placeholder="Search for any IP address">
+        <i class="fa-solid fa-angle-right"></i>
+      </div>
       </section>
       <div class="text-cover">
         <div class="text-grid">
