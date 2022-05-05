@@ -1,4 +1,4 @@
-const apiUrl = "https://geo.ipify.org/api/v2/country,city?apiKey=at_8GrODFm4uQ2JYOzdS0GVX7GP6rL5d";
+const apiUrl = "https://geo.ipify.org/api/v2/country,city?apiKey=at_EYvak5yT6eY9Gz5EFqX6WwYv7a3Dv";
 const input = document.querySelector('#ip-address');
 // Leaflet
 // Making a marker with a custom icon
@@ -40,62 +40,30 @@ async function fetchIpAddress() {
   document.querySelector('#location').textContent += result.location.postalCode;
   document.querySelector('#timezone').textContent += result.location.timezone;
   leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'});
-//   input.addEventListener('change', async (e) => {
-//     e.preventDefault();
-//     const userName = input.value;
-  
-//     if (userName !== '') {
-//       leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'});
-//     }
-//  console.log('push')
-//   });
-  console.log(result)
 }
 
 fetchIpAddress();
 
+const postIpAddress = () => {
+  const data = async (IPvalue) => {
+    const url = `${apiUrl}&ipAddress=${IPvalue}`
+    const get = await fetch(url)
+    const response = await get.json()
+    return response
+  }
+  input.addEventListener('change', async (e) => {
+    e.preventDefault()
+    const IPvalue = input.value;
+    const { ip,  location: { city, country, postalCode, timezone, lat, lng }, isp } = await data(IPvalue)
+  
+    document.querySelector('#ip').textContent = ip;
+    document.querySelector('#isp').textContent = isp;
+    document.querySelector('#location').textContent += `${city} , ${country} ${postalCode}`;
+    document.querySelector('#timezone').textContent += `${timezone}`;
+    leafletMarker.setLatLng([lat, lng],{alt: 'Marker'});
+    console.log(leafletMarker)
+    // L.marker.setLatLng([lat, lng]).addTo(map);
+  })
+}
 
-  // const postIpAddress = async (ipaddress) => {
-  //   const resp = await fetch(apiUrl, {
-  
-  //     method: 'POST',
-  //     mode: 'no-cors',
-  //     body: { ip: userName },
-  //     headers: {
-  //       'Content-type': 'application/json',
-  //     },
-  //   });
-  
-  //   const userData = await resp.json();
-  
-  //   return userData;
-  // };
-
-  // input.addEventListener('change', async (e) => {
-  //   e.preventDefault();
-  //   const userName = input.value;
-  //   // fetch("apiUrl, {
-  
-  //   //   method: 'GET',
-  //   //   mode: 'no-cors',
-  //   //   headers: {
-  //   //     'Content-type': 'application/json',
-  //   //   }
-  //   // })
-  //   // .then(function (response) {
-  //   //   return response.json()
-  //   // })
-  //   // .then(function (data) {
-  //   //   console.log(data)
-  //   // })
-  
-  //   if (userName !== '') {
-  //     await fetchIpAddress()
-  //   }
-  
-  //   // // loadToDom();
-  //   // input.value = '';
-  //   // console.log('post')
-  // });
-
-// postIpAddress();
+postIpAddress()
