@@ -60,11 +60,9 @@ h1 {
   grid-template-rows: 0.5fr 0.5fr;
 }
 
-/* Flex box */
+/* Text Styling */
 
-.flex-cover {
-  display: flex;
-  justify-content: space-evenly;
+.text-cover {
   border: 2px solid var(--white);
   background-color: var(--white);
   padding: 1.5rem;
@@ -76,10 +74,19 @@ h1 {
   border-radius: 10px;
 }
 
-/* Text Styling */
+.text-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
-p {
+.dark-gray {
   color: var(--darkGray);
-  font-size: clamp(1.1rem, 0.95rem + 1.5vw, 1.3rem);
+  font-size: clamp(0.8rem, 0.75rem + 1.5vw, 1rem);
   text-transform: uppercase;
+}
+
+.very-dark-gray {
+  color: var(--veryDarkGray);
+  font-size: clamp(1.1rem, 0.95rem + 1.5vw, 1.3rem);
+  text-transform: capitalize;
 }

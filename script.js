@@ -33,8 +33,8 @@ async function fetchIpAddress() {
   const result = await response.json();
   const { ip, isp } = result;
   // L.marker([result.location.lat, result.location.lng]).addTo(map);
-  document.querySelector('#ip').textContent += ip;
-  document.querySelector('#isp').textContent += isp;
+  document.querySelector('#ip').textContent = ip;
+  document.querySelector('#isp').textContent = isp;
   document.querySelector('#location').textContent += result.location.city;
   document.querySelector('#location').textContent += result.location.country;
   document.querySelector('#location').textContent += result.location.postalCode;
