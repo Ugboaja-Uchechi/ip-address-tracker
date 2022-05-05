@@ -152,4 +152,8 @@ and (max-device-width: 580px) {
   .very-dark-gray {
     border: none;
   }
+
+  .dark-gray {
+    font-size: 0.8em;
+  }
 }
