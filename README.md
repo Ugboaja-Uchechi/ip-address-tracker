@@ -4,7 +4,7 @@ This is my solution to the [IP Address Tracker challenge on Frontend Mentor](htt
 
 ### The challenge
 
-TIn this challenge, I used two separate APIs together to create an IP Address Tracking app.
+In this challenge, I used two separate APIs together to create an IP Address Tracking app.
 
 ### Users should be able to:
 
