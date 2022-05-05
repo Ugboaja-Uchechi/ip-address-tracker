@@ -28,4 +28,7 @@ h1 {
 .flex-cover {
   display: flex;
   justify-content: space-evenly;
+  /* border: 2px solid var(--white); */
+  background-color: teal;
+  padding: 2rem 1rem;
 }
