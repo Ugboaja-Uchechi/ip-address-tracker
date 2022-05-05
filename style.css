@@ -113,4 +113,43 @@ and (max-device-width: 580px) {
     align-items: center;
   }
 
+  #order1 {
+    order: 1;
+  }
+
+  #ip {
+    order: 2;
+  }
+
+  #order3 {
+    order: 3;
+  }
+
+  #location {
+    order: 4;
+  }
+
+  #order5 {
+    order: 5;
+  }
+
+  #timezone {
+    order: 6;
+  }
+
+  #order7 {
+    order: 7;
+  }
+
+  #isp {
+    order: 8;
+  }
+
+  .p-left {
+    padding: 0;
+  }
+
+  .very-dark-gray {
+    border: none;
+  }
 }
