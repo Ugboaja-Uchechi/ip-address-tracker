@@ -12,6 +12,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
+  height: 100vh;
 }
 
 h1 {
@@ -23,6 +24,12 @@ h1 {
 
 #map {
   height: 180px;
+  grid-column: 1/5;
+  grid-row: 2/4;
+}
+
+.grid-container {
+  display: grid;
 }
 
 .flex-cover {
@@ -30,5 +37,8 @@ h1 {
   justify-content: space-evenly;
   /* border: 2px solid var(--white); */
   background-color: teal;
-  padding: 2rem 1rem;
+  padding: 1.5rem;
+  grid-column: 1/5;
+  grid-row: 2/2;
+  z-index: 1000;
 }
