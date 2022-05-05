@@ -1,9 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
+:root {
+  --veryDarkGray: hsl(0, 0%, 17%);
+  --darkGray: hsl(0, 0%, 59%);
+  --white: #fff;
+  --textInput: 18px;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--white);
+  text-align: center;
 }
 
 #map {
