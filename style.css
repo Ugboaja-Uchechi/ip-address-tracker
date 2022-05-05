@@ -13,9 +13,16 @@ body {
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
   height: 100vh;
+  /* background-image: url(./images/pattern-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
+
+main {
   background-image: url(./images/pattern-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
+  height: 30%;
 }
 
 h1 {
@@ -24,12 +31,17 @@ h1 {
   color: var(--white);
   text-align: center;
   margin: 0;
+  padding-top: 2rem;
 }
 
 #map {
-  height: 180px;
+  height: 33rem;
   grid-column: 1/5;
   grid-row: 2/4;
+}
+
+.section {
+  height: 70%;
 }
 
 .grid-container {
