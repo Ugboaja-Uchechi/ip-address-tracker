@@ -14,13 +14,35 @@
   crossorigin=""></script>
 </head>
 <body>
-<label for="ip-address">
-  <h1>ip address tracker</h1>
-</label>
-<input type="text" name="ip-address" id="ip-address" placeholder="Search for any IP address or domain">
-  <main class="list">
-    <p id="ip"></p>
-    <div id="map"></div>
+  <!-- <main class="list">
+    <label for="ip-address">
+  <h1>iP address tracker</h1>
+  </label>
+  <input type="text" name="ip-address" id="ip-address" placeholder="Search for any IP address or domain">
+  </main> -->
+  <main class="mainn">
+    <div class="grid-container">
+      <section class="main">
+        <!-- <label for="ip-address"> -->
+      <h1>iP address tracker</h1>
+      <!-- </label> -->
+      <!-- <input type="text" name="ip-address" id="ip-address" placeholder="Search for any IP address or domain"> -->
+      </section>
+      <div class="text-cover">
+        <div class="text-grid">
+          <p id="order1" class="dark-gray">ip address</p>
+          <p id="order3" class="p-left dark-gray">location</p>
+          <p id="order5" class="p-left dark-gray">timezone</p>
+          <p id="order7" class="p-left dark-gray">isp</p>
+
+          <p class="very-dark-gray" id="ip"></p>
+          <p class="p-left very-dark-gray" id="location"></p>
+          <p class="p-left very-dark-gray" id="timezone"></p>
+          <p class="p-left very-dark-gray" id="isp"></p>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
   </main>
   <script src="script.js" defer></script>
 </body>
