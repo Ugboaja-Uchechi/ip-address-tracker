@@ -32,8 +32,17 @@ async function fetchIpAddress() {
   const response = await fetch(apiUrl);
   const result = await response.json();
   const { ip } = result;
-  L.marker([result.location.lat, result.location.lng]).addTo(map);
-  leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'}).bindPopup('Current location of IP address');
+  // L.marker([result.location.lat, result.location.lng]).addTo(map);
+  leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'});
+  input.addEventListener('change', async (e) => {
+    e.preventDefault();
+    const userName = input.value;
+  
+    if (userName !== '') {
+      leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'});
+    }
+ console.log('push')
+  });
   document.querySelector('#ip').textContent = ip;
   console.log(result)
 }
@@ -60,7 +69,7 @@ fetchIpAddress();
   // input.addEventListener('change', async (e) => {
   //   e.preventDefault();
   //   const userName = input.value;
-  //   // fetch("https://geo.ipify.org/api/v2/country,city?apiKey=at_m3M1l8QpxvtG9ih8CR732lDeUuxcv", {
+  //   // fetch("apiUrl, {
   
   //   //   method: 'GET',
   //   //   mode: 'no-cors',
