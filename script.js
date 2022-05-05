@@ -31,19 +31,24 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 async function fetchIpAddress() {
   const response = await fetch(apiUrl);
   const result = await response.json();
-  const { ip } = result;
+  const { ip, isp } = result;
   // L.marker([result.location.lat, result.location.lng]).addTo(map);
-  leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'});
-  input.addEventListener('change', async (e) => {
-    e.preventDefault();
-    const userName = input.value;
-  
-    if (userName !== '') {
-      leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'});
-    }
- console.log('push')
-  });
   document.querySelector('#ip').textContent = ip;
+  document.querySelector('#isp').textContent = isp;
+  document.querySelector('#location').textContent += result.location.city;
+  document.querySelector('#location').textContent += result.location.country;
+  document.querySelector('#location').textContent += result.location.postalCode;
+  document.querySelector('#timezone').textContent += result.location.timezone;
+  leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'});
+//   input.addEventListener('change', async (e) => {
+//     e.preventDefault();
+//     const userName = input.value;
+  
+//     if (userName !== '') {
+//       leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'});
+//     }
+//  console.log('push')
+//   });
   console.log(result)
 }
 

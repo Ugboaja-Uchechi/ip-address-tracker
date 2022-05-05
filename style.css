@@ -24,3 +24,8 @@ h1 {
 #map {
   height: 180px;
 }
+
+.flex-cover {
+  display: flex;
+  justify-content: space-evenly;
+}
