@@ -102,3 +102,15 @@ h1 {
 #isp {
   border-right: none;
 }
+
+@media screen
+and (min-device-width: 320px)
+and (max-device-width: 580px) {
+
+  .text-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
