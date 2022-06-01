@@ -15,7 +15,7 @@ const myIcon = L.icon({
 
 // The first value in the Array is the latitude, the second value is the longitutude and after that we have the zoom level.
 //Making a map and tiles
-let map = L.map('map').setView([51.50853, -0.12574], 15);
+let map = L.map('map').setView([0, 0], 15);
 const leafletMarker = L.marker([0,0], {icon: myIcon}).addTo(map);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -33,13 +33,13 @@ async function fetchIpAddress() {
   const response = await fetch(apiUrl);
   const result = await response.json();
   const { ip, isp } = result;
-  // L.marker([result.location.lat, result.location.lng]).addTo(map);
   document.querySelector('#ip').textContent = ip;
   document.querySelector('#isp').textContent = isp;
   document.querySelector('#location').textContent += result.location.city + ", ";
   document.querySelector('#location').textContent += result.location.country;
   document.querySelector('#location').textContent += result.location.postalCode;
   document.querySelector('#timezone').textContent += result.location.timezone;
+  map.setView([result.location.lat, result.location.lng], 15)
   leafletMarker.setLatLng([result.location.lat, result.location.lng],{alt: 'Marker'});
 }
 
@@ -52,6 +52,18 @@ const postIpAddress = () => {
     const response = await get.json()
     return response
   }
+  input.addEventListener('change', async (e) => {
+    e.preventDefault()
+    const IPvalue = input.value;
+    const { ip,  location: { city, country, postalCode, timezone, lat, lng }, isp } = await data(IPvalue)
+  
+    document.querySelector('#ip').textContent = ip;
+    document.querySelector('#isp').textContent = isp;
+    document.querySelector('#location').textContent = `${city} , ${country} ${postalCode}`;
+    document.querySelector('#timezone').textContent = `${timezone}`;
+    map.setView([lat, lng], 15)
+    leafletMarker.setLatLng([lat, lng],{alt: 'Marker'});
+  })
   button.addEventListener('click', async (e) => {
     e.preventDefault()
     const IPvalue = input.value;
@@ -59,11 +71,10 @@ const postIpAddress = () => {
   
     document.querySelector('#ip').textContent = ip;
     document.querySelector('#isp').textContent = isp;
-    document.querySelector('#location').textContent += `${city} , ${country} ${postalCode}`;
-    document.querySelector('#timezone').textContent += `${timezone}`;
+    document.querySelector('#location').textContent = `${city} , ${country} ${postalCode}`;
+    document.querySelector('#timezone').textContent = `${timezone}`;
+    map.setView([lat, lng], 15)
     leafletMarker.setLatLng([lat, lng],{alt: 'Marker'});
-    console.log(leafletMarker)
-    // L.marker.setLatLng([lat, lng]).addTo(map);
   })
 }
 
