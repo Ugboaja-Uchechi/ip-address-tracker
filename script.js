@@ -1,4 +1,4 @@
-const apiUrl = "https://geo.ipify.org/api/v2/country,city?apiKey=at_CdDgKm8Dr84320RkgDai6LObWb0GQ";
+const apiUrl = "https://geo.ipify.org/api/v2/country,city?apiKey=at_jZ1A9Xw6qkn4HKvLbe7EANOCI3arL";
 const input = document.querySelector('#ip-address');
 const button = document.querySelector('.fa-solid');
 // Leaflet
